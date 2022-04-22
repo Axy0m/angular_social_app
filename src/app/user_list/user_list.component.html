@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="userListing(user_listForm)" #user_listForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="user_name" ngModel type="name" placeholder="Nom utilisateur" #user_nameInput="ngModel" required>
+      <mat-error *ngIf="user_nameInput.invalid">Veuillez entrer une adresse mail</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="name" name="post_name" ngModel matInput placeholder="Post" #post_nameInput="ngModel" required>
+      <mat-error *ngIf="post_nameInput.invalid">Veuillez entrer le nom du post</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="warn" type="submit">Rechercher</button>
+  </form>
+</mat-card>
